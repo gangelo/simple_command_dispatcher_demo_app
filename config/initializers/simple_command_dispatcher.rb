@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-require 'simple_command_dispatcher'
+require "simple_command_dispatcher"
 
 # Autoload command classes
 Rails.application.config.to_prepare do
-  commands_path = Rails.root.join('app', 'api')
-  
+  commands_path = Rails.root.join("app", "api")
+
   if commands_path.exist?
-    Dir[commands_path.join('**', '*.rb')].each do |file|
+    Dir[commands_path.join("**", "*.rb")].each do |file|
       require_dependency file
     end
   end
