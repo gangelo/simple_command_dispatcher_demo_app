@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  include UserResponse
+
   skip_before_action :authenticate_user!, only: [ :create ]
 
   def create
@@ -22,16 +24,5 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:username, :email, :first_name, :last_name, :password, :password_confirmation)
-  end
-
-  def user_response(user)
-    {
-      id: user.id,
-      username: user.username,
-      email: user.email,
-      first_name: user.first_name,
-      last_name: user.last_name,
-      role: user.role
-    }
   end
 end

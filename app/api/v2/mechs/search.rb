@@ -25,7 +25,7 @@ module Api
           @variant           = params[:variant]
         end
 
-        attr_accessor :cost, :introduction_year, :mech_name, :tonnage, :variant
+        attr_reader :cost, :introduction_year, :mech_name, :tonnage, :variant
       end
     end
   end

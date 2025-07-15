@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  include UserResponse
+
   skip_before_action :authenticate_user!, only: [ :create ]
 
   def create
@@ -20,18 +22,5 @@ class SessionsController < ApplicationController
     # Since we're using stateless JWT, logout is handled client-side
     # by removing the token. We could implement token blacklisting here if needed.
     render json: { message: "Logout successful" }, status: :ok
-  end
-
-  private
-
-  def user_response(user)
-    {
-      id: user.id,
-      username: user.username,
-      email: user.email,
-      first_name: user.first_name,
-      last_name: user.last_name,
-      role: user.role
-    }
   end
 end

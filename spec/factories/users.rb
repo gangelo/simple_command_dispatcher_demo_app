@@ -6,5 +6,16 @@ FactoryBot.define do
     last_name { "User" }
     password { "password" }
     password_confirmation { "password" }
+    role { User::ROLE_USER }
+    created_at { Time.current }
+    updated_at { Time.current }
+  end
+
+  trait :admin_role do
+    role { User::ROLE_ADMIN }
+  end
+
+  trait :user_role do
+    role { User::ROLE_USER }
   end
 end

@@ -19,7 +19,7 @@ module Api
           @mech_name = params[:mech_name]
         end
 
-        attr_accessor :mech_name
+        attr_reader :mech_name
       end
     end
   end
