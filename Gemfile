@@ -38,8 +38,11 @@ gem "thruster", require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin Ajax possible
 # gem "rack-cors"
 
+# Authorization
+gem "pundit", "~> 2.5"
+
 # Simple Command Dispatcher for dynamic command execution
-gem "simple_command_dispatcher", path: "/Users/gangelo/dev/ruby-gems/simple_command_dispatcher"
+gem "simple_command_dispatcher", "~> 4.0"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

@@ -5,7 +5,7 @@ User.find_or_create_by!(username: "juser") do |user|
   user.first_name = "Joe"
   user.last_name  = "User"
   user.password   = "password"
-  user.role       = "user"
+  user.role       = User::ROLE_USER
 end
 
 User.find_or_create_by!(username: "jadmin") do |user|
@@ -13,5 +13,5 @@ User.find_or_create_by!(username: "jadmin") do |user|
   user.first_name = "Joe"
   user.last_name  = "Admin"
   user.password   = "password"
-  user.role       = "admin"
+  user.role       = User::ROLE_ADMIN
 end

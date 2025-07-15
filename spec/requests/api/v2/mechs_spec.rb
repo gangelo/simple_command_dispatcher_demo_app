@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Api::V2::Mechs", type: :request do
+RSpec.describe "Api::V2::Mechs" do
   before do
     login_user(user)
   end
